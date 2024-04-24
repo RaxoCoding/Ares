@@ -1,5 +1,5 @@
 # Prisma
-prisma/migrations
+prisma/migrations/2*
 
 # Logs
 logs

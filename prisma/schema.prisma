@@ -4,18 +4,20 @@ datasource db {
 }
 
 model Event {
-	id          String   @id @default(cuid())
-	name        String
-	description String?
-	date        DateTime
-	location    String
-	createdAt   DateTime @default(now())
-	updatedAt   DateTime @updatedAt
-	participantIds String[]
-	maxParticipants Int
-	minParticipants Int
+  id              String   @id @default(cuid())
+  name            String   @default("")
+  description     String?
+  date            DateTime @default(now())
+  location        String   @default("")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  maxParticipants Int      @default(0)
+  minParticipants Int      @default(0)
+  participantIds  String[] @default([])
+  messageId       String   @unique @default(cuid())
+	creatorId       String	 @default("")
 }
 
 generator client {
-	provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }

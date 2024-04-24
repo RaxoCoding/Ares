@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 
-async function run(interaction) {
+async function run(client, interaction) {
 	await interaction.reply('Pong!');
 };
 
